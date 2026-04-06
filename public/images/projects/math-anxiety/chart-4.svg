@@ -1,0 +1,14 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0F162B"/>
+  <rect x="90" y="80" width="1420" height="740" rx="24" fill="#131F3B" stroke="#2D4672"/>
+  <text x="150" y="170" fill="#EAF2FF" font-family="Arial, sans-serif" font-size="40">Review quiz readiness distribution</text>
+  <rect x="220" y="620" width="110" height="80" rx="8" fill="#6B7FA5"/>
+  <rect x="370" y="550" width="110" height="150" rx="8" fill="#6B7FA5"/>
+  <rect x="520" y="470" width="110" height="230" rx="8" fill="#4FC3FF"/>
+  <rect x="670" y="430" width="110" height="270" rx="8" fill="#4FC3FF"/>
+  <rect x="820" y="460" width="110" height="240" rx="8" fill="#4FC3FF"/>
+  <rect x="970" y="520" width="110" height="180" rx="8" fill="#6B7FA5"/>
+  <rect x="1120" y="580" width="110" height="120" rx="8" fill="#6B7FA5"/>
+  <text x="220" y="760" fill="#AFC4E8" font-family="Arial, sans-serif" font-size="24">Concentration in lower-middle ranges</text>
+</svg>
+

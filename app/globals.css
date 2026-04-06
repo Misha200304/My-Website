@@ -3,31 +3,122 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --color-bg: 36 40% 98%;
+  --color-panel: 30 33% 96%;
+  --color-text: 226 18% 14%;
+  --color-muted: 222 10% 36%;
+  --color-border: 220 16% 84%;
+  --color-accent: 207 76% 44%;
+  --color-accent-strong: 207 86% 36%;
+  --color-focus: 202 98% 43%;
+  --color-shadow: 225 15% 18%;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.9rem;
+  --radius-lg: 1.2rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.dark {
+  --color-bg: 222 33% 9%;
+  --color-panel: 224 24% 13%;
+  --color-text: 210 28% 93%;
+  --color-muted: 215 14% 72%;
+  --color-border: 220 18% 27%;
+  --color-accent: 194 84% 62%;
+  --color-accent-strong: 194 88% 56%;
+  --color-focus: 194 100% 64%;
+  --color-shadow: 220 72% 2%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: hsl(var(--color-text));
+  background: radial-gradient(
+      1200px circle at 10% -25%,
+      hsl(var(--color-accent) / 0.1),
+      transparent 52%
+    ),
+    radial-gradient(
+      950px circle at 95% 8%,
+      hsl(var(--color-accent) / 0.08),
+      transparent 52%
+    ),
+    hsl(var(--color-bg));
+  font-family: var(--font-sans), sans-serif;
+  text-rendering: optimizeLegibility;
+  min-height: 100vh;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+::selection {
+  background: hsl(var(--color-accent) / 0.25);
+}
+
+a {
+  text-underline-offset: 0.24em;
+}
+
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus focus-visible:ring-offset-2 focus-visible:ring-offset-bg;
+}
+
+.surface {
+  @apply rounded-[var(--radius-lg)] border border-border bg-panel;
+}
+
+.prose-editorial {
+  @apply text-base leading-7 text-text;
+}
+
+.prose-editorial h2 {
+  @apply mt-12 text-3xl font-semibold tracking-tight text-text;
+}
+
+.prose-editorial h3 {
+  @apply mt-10 text-2xl font-semibold tracking-tight text-text;
+}
+
+.prose-editorial p {
+  @apply mt-5 text-[1.02rem] leading-8 text-muted;
+}
+
+.prose-editorial ul {
+  @apply mt-5 list-disc space-y-3 pl-6 text-muted;
+}
+
+.prose-editorial li::marker {
+  color: hsl(var(--color-accent));
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: reveal 0.75s ease forwards;
+}
+
+.reveal-delay {
+  animation-delay: 0.1s;
+}
+
+.reveal-delay-lg {
+  animation-delay: 0.2s;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    animation: none;
   }
 }

@@ -1,113 +1,153 @@
 import Image from "next/image";
+import { getAllCertificates, getAllCoursework, getAllProjects } from "@/lib/content";
+import { Section } from "@/components/ui/Section";
+import { LinkButton } from "@/components/ui/Button";
+import { ProjectCard } from "@/components/project/ProjectCard";
+import { Badge } from "@/components/ui/Badge";
+import { formatDate } from "@/lib/utils";
 
 export default function Home() {
+  const featuredProjects = getAllProjects().filter((item) => item.featured).slice(0, 3);
+  const featuredCourses = getAllCoursework({ track: "Data Science & AI" }).slice(0, 4);
+  const featuredCertificates = getAllCertificates().slice(0, 4);
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Section className="pb-8 pt-14 md:pt-24">
+        <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-[1.08fr_0.92fr]">
+          <div className="reveal space-y-8">
+            <Badge>Open to internships and high-impact analytics roles</Badge>
+            <div className="space-y-6">
+              <p className="text-sm uppercase tracking-[0.24em] text-muted">
+                Mykhailo Polishchuk
+              </p>
+              <h1 className="max-w-[16ch] font-serif text-4xl leading-tight tracking-tight md:text-6xl">
+                I turn data into meaningful decisions that solve business problems.
+              </h1>
+              <p className="max-w-2xl text-lg leading-8 text-muted md:text-xl">
+                I build research-backed analytics and AI workflows that help teams
+                move from uncertainty to clear action. My focus is practical:
+                stronger decisions, better systems, and outcomes that improve over time.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <LinkButton href="/projects">Explore Case Studies</LinkButton>
+              <LinkButton href="/resume" variant="secondary">
+                View Resume
+              </LinkButton>
+              <LinkButton href="/contact" variant="secondary">
+                Contact
+              </LinkButton>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-3">
+              <div className="surface p-4">
+                <p className="text-xs uppercase tracking-[0.14em] text-muted">GPA</p>
+                <p className="mt-2 font-serif text-3xl tracking-tight">4.0</p>
+              </div>
+              <div className="surface p-4">
+                <p className="text-xs uppercase tracking-[0.14em] text-muted">Focus</p>
+                <p className="mt-2 text-sm text-text">Data Science, AI, Product Analytics</p>
+              </div>
+              <div className="surface p-4">
+                <p className="text-xs uppercase tracking-[0.14em] text-muted">Leadership</p>
+                <p className="mt-2 text-sm text-text">Division I Team Captain</p>
+              </div>
+            </div>
+          </div>
+          <div className="reveal reveal-delay space-y-5">
+            <div className="surface overflow-hidden p-2">
+              <Image
+                src="/images/headshot.jpg"
+                alt="Portrait of Mykhailo Polishchuk"
+                width={900}
+                height={1100}
+                priority
+                className="h-auto w-full rounded-[calc(var(--radius-lg)-0.2rem)] object-cover"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+            </div>
+            <div className="surface p-5">
+              <p className="text-sm text-muted">
+                Honors student. Phi Eta Sigma and Delta Mu Delta member. Dean&apos;s List every semester.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </Section>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <Section
+        title="Academic Snapshot"
+        subtitle="Selected coursework and certifications that support my technical depth and business decision-making range."
+      >
+        <div className="grid gap-6 lg:grid-cols-2">
+          <article className="surface p-6">
+            <header className="mb-4 flex items-center justify-between">
+              <h3 className="font-serif text-2xl tracking-tight">Coursework Highlights</h3>
+              <LinkButton href="/coursework" variant="secondary" className="h-9 px-3 text-xs">
+                View All
+              </LinkButton>
+            </header>
+            <ul className="space-y-3">
+              {featuredCourses.map((course) => (
+                <li key={`${course.slug}-${course.term}`} className="rounded-md border border-border bg-bg px-4 py-3">
+                  <p className="text-sm font-medium">{course.title}</p>
+                  <p className="mt-1 text-xs text-muted">
+                    {course.term} · Grade: {course.grade}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </article>
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <article className="surface p-6">
+            <header className="mb-4 flex items-center justify-between">
+              <h3 className="font-serif text-2xl tracking-tight">Certificate Highlights</h3>
+              <LinkButton href="/certificates" variant="secondary" className="h-9 px-3 text-xs">
+                View All
+              </LinkButton>
+            </header>
+            <ul className="space-y-3">
+              {featuredCertificates.map((certificate) => (
+                <li
+                  key={certificate.slug}
+                  className="rounded-md border border-border bg-bg px-4 py-3"
+                >
+                  <p className="text-sm font-medium">{certificate.title}</p>
+                  <p className="mt-1 text-xs text-muted">
+                    {certificate.issuer} · {formatDate(certificate.issueDate)}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </Section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <Section
+        title="Featured Projects"
+        subtitle="Selected work across data science, marketing analytics, and AI product development."
+      >
+        <div className="grid gap-7 md:grid-cols-2 xl:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
+          ))}
+        </div>
+      </Section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      <Section>
+        <div className="surface reveal reveal-delay-lg grid gap-6 p-8 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <h2 className="font-serif text-3xl tracking-tight">
+              Looking for someone who can analyze deeply and execute fast?
+            </h2>
+            <p className="mt-3 max-w-2xl text-lg text-muted">
+              I bring research rigor, technical range, and high-performance discipline
+              to analytics, strategy, and AI-focused product work.
+            </p>
+          </div>
+          <LinkButton href="/contact">Start a Conversation</LinkButton>
+        </div>
+      </Section>
+    </>
   );
 }

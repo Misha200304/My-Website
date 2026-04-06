@@ -1,0 +1,12 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0F162B"/>
+  <rect x="90" y="80" width="1420" height="740" rx="24" fill="#131F3B" stroke="#2D4672"/>
+  <text x="150" y="170" fill="#EAF2FF" font-family="Arial, sans-serif" font-size="40">First vs second attempt score distributions</text>
+  <line x1="190" y1="700" x2="1410" y2="700" stroke="#8FA4CC" stroke-width="3"/>
+  <line x1="190" y1="240" x2="190" y2="700" stroke="#8FA4CC" stroke-width="3"/>
+  <path d="M240 620C330 590 410 580 500 545C600 510 680 500 760 470C840 440 940 430 1020 400C1110 365 1220 345 1360 320" stroke="#6C7FA6" stroke-width="8" stroke-linecap="round"/>
+  <path d="M240 560C330 530 410 515 500 480C600 440 680 425 760 395C840 365 940 350 1020 320C1110 290 1220 270 1360 245" stroke="#61C2FF" stroke-width="8" stroke-linecap="round"/>
+  <text x="250" y="760" fill="#AFC4E8" font-family="Arial, sans-serif" font-size="24">First attempt</text>
+  <text x="500" y="760" fill="#AFC4E8" font-family="Arial, sans-serif" font-size="24">Second attempt</text>
+</svg>
+

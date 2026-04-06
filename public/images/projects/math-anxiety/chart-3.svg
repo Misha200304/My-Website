@@ -1,0 +1,12 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0F162B"/>
+  <rect x="90" y="80" width="1420" height="740" rx="24" fill="#131F3B" stroke="#2D4672"/>
+  <text x="150" y="170" fill="#EAF2FF" font-family="Arial, sans-serif" font-size="40">Students below 75 improved most</text>
+  <rect x="250" y="280" width="380" height="340" rx="16" fill="#6B7FA5"/>
+  <rect x="760" y="220" width="380" height="400" rx="16" fill="#4FC3FF"/>
+  <rect x="1270" y="180" width="180" height="440" rx="16" fill="#2D9DE8"/>
+  <text x="300" y="660" fill="#D7E5FF" font-family="Arial, sans-serif" font-size="24">Before retake</text>
+  <text x="810" y="660" fill="#D7E5FF" font-family="Arial, sans-serif" font-size="24">After retake</text>
+  <text x="1240" y="730" fill="#AFC4E8" font-family="Arial, sans-serif" font-size="22">Higher gain among at-risk students</text>
+</svg>
+

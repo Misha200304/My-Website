@@ -1,0 +1,12 @@
+<svg width="1200" height="1500" viewBox="0 0 1200 1500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="1500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1B2A"/>
+      <stop offset="1" stop-color="#174F72"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1500" rx="48" fill="url(#bg)"/>
+  <circle cx="600" cy="560" r="235" fill="#E8EDF2"/>
+  <path d="M250 1280C250 1063.5 425.5 888 642 888H558C774.5 888 950 1063.5 950 1280V1320H250V1280Z" fill="#E8EDF2"/>
+  <text x="600" y="1408" text-anchor="middle" fill="#D6E3EE" font-family="Arial, sans-serif" font-size="42">Replace with your headshot</text>
+</svg>

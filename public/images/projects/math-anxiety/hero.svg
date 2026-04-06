@@ -1,0 +1,17 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0E1424"/>
+  <rect x="70" y="60" width="1460" height="780" rx="30" fill="#111C34" stroke="#2A3A63"/>
+  <text x="130" y="160" fill="#E8F0FF" font-family="Arial, sans-serif" font-size="46">Reducing Math Anxiety Through Structured Review and Second Attempts</text>
+  <text x="130" y="215" fill="#AFC4E8" font-family="Arial, sans-serif" font-size="28">Education Analytics Case Study</text>
+  <rect x="130" y="270" width="1340" height="500" rx="22" fill="#14284D" stroke="#365793"/>
+  <path d="M190 690C280 650 360 640 430 590C520 530 590 560 680 500C760 450 840 470 930 410C1010 360 1090 360 1180 320C1260 290 1340 255 1410 240" stroke="#79D6FF" stroke-width="10" stroke-linecap="round"/>
+  <rect x="190" y="320" width="260" height="120" rx="14" fill="#1C3564"/>
+  <rect x="500" y="320" width="260" height="120" rx="14" fill="#1C3564"/>
+  <rect x="810" y="320" width="260" height="120" rx="14" fill="#1C3564"/>
+  <rect x="1120" y="320" width="260" height="120" rx="14" fill="#1C3564"/>
+  <text x="220" y="370" fill="#C7DBFF" font-family="Arial, sans-serif" font-size="26">Math Anxiety</text>
+  <text x="540" y="370" fill="#C7DBFF" font-family="Arial, sans-serif" font-size="26">Low Confidence</text>
+  <text x="840" y="370" fill="#C7DBFF" font-family="Arial, sans-serif" font-size="26">Review Support</text>
+  <text x="1140" y="370" fill="#C7DBFF" font-family="Arial, sans-serif" font-size="26">Second Attempts</text>
+</svg>
+

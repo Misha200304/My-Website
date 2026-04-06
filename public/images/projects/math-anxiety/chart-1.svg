@@ -1,0 +1,13 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#0F162B"/>
+  <rect x="90" y="80" width="1420" height="740" rx="24" fill="#131F3B" stroke="#2D4672"/>
+  <text x="150" y="170" fill="#EAF2FF" font-family="Arial, sans-serif" font-size="40">Second attempt impact breakdown</text>
+  <rect x="210" y="260" width="1180" height="90" rx="16" fill="#1A2D54"/>
+  <rect x="210" y="260" width="566" height="90" rx="16" fill="#3FA7FF"/>
+  <rect x="776" y="260" width="531" height="90" fill="#6B7FA5"/>
+  <rect x="1307" y="260" width="83" height="90" rx="0 16 16 0" fill="#FF7A90"/>
+  <text x="230" y="317" fill="#091323" font-family="Arial, sans-serif" font-size="30" font-weight="700">48% Benefited</text>
+  <text x="835" y="317" fill="#E8F0FF" font-family="Arial, sans-serif" font-size="28">45% No second attempt</text>
+  <text x="1318" y="317" fill="#FFF1F4" font-family="Arial, sans-serif" font-size="20">7%</text>
+</svg>
+

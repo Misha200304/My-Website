@@ -1,0 +1,14 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#101B12"/>
+  <rect x="80" y="70" width="1440" height="760" rx="28" fill="#132A19" stroke="#2F5B39"/>
+  <text x="140" y="170" fill="#DFFCE7" font-family="Arial, sans-serif" font-size="46">Marketing Mix Lab</text>
+  <rect x="140" y="230" width="640" height="520" rx="18" fill="#183421" stroke="#2F6340"/>
+  <rect x="840" y="230" width="620" height="520" rx="18" fill="#183421" stroke="#2F6340"/>
+  <rect x="210" y="650" width="80" height="60" fill="#60A5FA"/>
+  <rect x="320" y="590" width="80" height="120" fill="#34D399"/>
+  <rect x="430" y="540" width="80" height="170" fill="#FBBF24"/>
+  <rect x="540" y="500" width="80" height="210" fill="#FB7185"/>
+  <path d="M900 640L1000 560L1100 590L1200 500L1300 470L1400 420" stroke="#9AE6B4" stroke-width="10" stroke-linecap="round"/>
+  <text x="180" y="300" fill="#B6F4CB" font-family="Arial, sans-serif" font-size="30">Channel contribution</text>
+  <text x="880" y="300" fill="#B6F4CB" font-family="Arial, sans-serif" font-size="30">Budget scenario frontier</text>
+</svg>
