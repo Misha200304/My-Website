@@ -23,3 +23,15 @@ test("blue theme replaces orange-led theme", () => {
   assert.match(css, /#0f172a/i);
   assert.doesNotMatch(css, /#ff9900/i);
 });
+
+test("portfolio pages support project images with a placeholder fallback", () => {
+  const listing = read("src/app/portfolio/page.tsx");
+  const detail = read("src/app/portfolio/[slug]/page.tsx");
+  assert.match(listing, /p\.image/);
+  assert.match(detail, /project\.image/);
+  assert.match(listing, /Publication visual coming soon|Project visual coming soon/);
+});
+
+test("marketing project points to Kyivski Zori", () => {
+  assert.match(read("src/data/config.ts"), /https:\/\/kz\.kiev\.ua\//);
+});
