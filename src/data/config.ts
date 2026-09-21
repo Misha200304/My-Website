@@ -7,7 +7,7 @@ export const SITE = {
 
 I am especially interested in problems where data needs to be collected, cleaned, analyzed, and translated into something useful. That can mean improving a workflow, supporting a growth decision, or communicating research findings clearly to a non-technical audience.`,
   available: true,
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mykhalopolishchuk.com",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://mykhailopolishchuk.com",
   cvPdf: "/resume.pdf",
   email: "polishukmisha895@gmail.com",
   location: "Kyiv, Ukraine · Erie, PA",
