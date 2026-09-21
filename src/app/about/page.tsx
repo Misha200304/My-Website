@@ -13,7 +13,7 @@ export default function AboutPage() {
           <h1 className="mb-6 text-4xl font-bold tracking-tight text-[#161E2D] md:text-5xl">Data, technology, and business—connected.</h1>
           <p className="max-w-2xl text-lg leading-relaxed text-neutral-600">{SITE.bio}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href={SITE.cvPdf} download className="accent-bg rounded-full px-7 py-3 text-center text-sm font-semibold transition hover:brightness-95">Download CV (PDF)</a>
+            <Link href="/portfolio" className="accent-bg rounded-full px-7 py-3 text-center text-sm font-semibold transition hover:brightness-95">View my work</Link>
             <Link href="/contact" className="rounded-full border border-[#232F3E] px-7 py-3 text-center text-sm font-semibold text-[#232F3E] transition hover:bg-[#232F3E] hover:text-white">Contact me</Link>
           </div>
         </div>
@@ -43,7 +43,7 @@ export default function AboutPage() {
 
       <section className="border-t border-neutral-100 py-24">
         <div className="mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-3">
-          <div><p className="accent-text mb-1 text-sm font-semibold uppercase tracking-widest">Experience</p><a href={SITE.cvPdf} download className="text-xs text-neutral-400 transition hover:text-neutral-700">↓ Download full CV</a></div>
+          <div><p className="accent-text mb-1 text-sm font-semibold uppercase tracking-widest">Experience</p><p className="text-xs text-neutral-400">Selected professional experience</p></div>
           <div className="space-y-10 md:col-span-2">
             {EXPERIENCE.map((e) => <div key={`${e.role}-${e.company}`} className="relative border-l-2 border-neutral-200 pl-6"><span className="accent-bg absolute -left-[7px] top-1.5 h-3 w-3 rounded-full" /><div className="text-sm text-neutral-400">{e.period}</div><h3 className="mt-1 text-lg font-semibold">{e.role} · {e.companyUrl ? <a href={e.companyUrl} target="_blank" rel="noopener noreferrer" className="hover:underline">{e.company}</a> : e.company}</h3><p className="mt-2 text-sm text-neutral-600">{e.description}</p></div>)}
           </div>
