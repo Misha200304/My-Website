@@ -9,3 +9,5 @@ test("portfolio pages support project images with a placeholder fallback", () =>
 test("marketing project points to Kyivski Zori", () => { assert.match(read("src/data/config.ts"), /https:\/\/kz\.kiev\.ua\//); });
 test("blog route has a zero-post empty state without fake posts", () => { const blog = read("src/app/blog/page.tsx"); assert.match(blog, /BLOG_POSTS\.length === 0/); assert.match(blog, /Posts coming soon/); });
 test("blog detail route resolves posts from BLOG_POSTS", () => { const detail = read("src/app/blog/[slug]/page.tsx"); assert.match(detail, /generateStaticParams/); assert.match(detail, /BLOG_POSTS\.find/); assert.match(detail, /notFound\(\)/); });
+test("about page keeps experience timeline and adds AWS Student Builder", () => { const about = read("src/app/about/page.tsx"); assert.match(about, /EXPERIENCE\.map/); assert.match(about, /AWS_STUDENT_BUILDER/); assert.match(about, /AWS Student Builder/); });
+test("AWS Student Builder link is conditional", () => { assert.match(read("src/app/about/page.tsx"), /AWS_STUDENT_BUILDER\.href\s*&&/); });
