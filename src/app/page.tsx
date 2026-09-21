@@ -73,7 +73,7 @@ export default function Home() {
           <p className="mb-8 text-lg text-neutral-300">I&apos;m interested in data, AI, analytics, marketing, research, and projects where measurable outcomes matter.</p>
           <div className="flex flex-col justify-center gap-3 sm:flex-row">
             <Link href="/contact" className="accent-bg rounded-full px-7 py-3.5 text-center font-semibold transition hover:brightness-95">Get in touch</Link>
-            <a href={SITE.cvPdf} className="rounded-full border border-white/30 px-7 py-3.5 text-center font-semibold transition hover:bg-white hover:text-[#232F3E]" download>Download CV</a>
+            <Link href="/about" className="rounded-full border border-white/30 px-7 py-3.5 text-center font-semibold transition hover:bg-white hover:text-[#232F3E]">View resume</Link>
           </div>
         </div>
       </section>
