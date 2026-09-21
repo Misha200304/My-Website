@@ -1,37 +1,11 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-
 const read = (path) => readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
-
-test("navigation includes Blog", () => {
-  const config = read("src/data/config.ts");
-  assert.match(config, /label:\s*"Blog",\s*href:\s*"\/blog"/);
-});
-
-test("skills include V2 tools and exclude FastAPI", () => {
-  const config = read("src/data/config.ts");
-  for (const term of ["Data Analytics", "AWS", "n8n", "CLI Agents", "React", "TypeScript", "MongoDB"]) {
-    assert.match(config, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-  }
-  assert.doesNotMatch(config, /FastAPI/);
-});
-
-test("blue theme replaces orange-led theme", () => {
-  const css = read("src/app/globals.css");
-  assert.match(css, /#2563eb/i);
-  assert.match(css, /#0f172a/i);
-  assert.doesNotMatch(css, /#ff9900/i);
-});
-
-test("portfolio pages support project images with a placeholder fallback", () => {
-  const listing = read("src/app/portfolio/page.tsx");
-  const detail = read("src/app/portfolio/[slug]/page.tsx");
-  assert.match(listing, /p\.image/);
-  assert.match(detail, /project\.image/);
-  assert.match(listing, /Publication visual coming soon|Project visual coming soon/);
-});
-
-test("marketing project points to Kyivski Zori", () => {
-  assert.match(read("src/data/config.ts"), /https:\/\/kz\.kiev\.ua\//);
-});
+test("navigation includes Blog", () => { const config = read("src/data/config.ts"); assert.match(config, /label:\s*"Blog",\s*href:\s*"\/blog"/); });
+test("skills include V2 tools and exclude FastAPI", () => { const config = read("src/data/config.ts"); for (const term of ["Data Analytics", "AWS", "n8n", "CLI Agents", "React", "TypeScript", "MongoDB"]) assert.match(config, new RegExp(term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))); assert.doesNotMatch(config, /FastAPI/); });
+test("blue theme replaces orange-led theme", () => { const css = read("src/app/globals.css"); assert.match(css, /#2563eb/i); assert.match(css, /#0f172a/i); assert.doesNotMatch(css, /#ff9900/i); });
+test("portfolio pages support project images with a placeholder fallback", () => { const listing = read("src/app/portfolio/page.tsx"); const detail = read("src/app/portfolio/[slug]/page.tsx"); assert.match(listing, /p\.image/); assert.match(detail, /project\.image/); assert.match(listing, /Publication visual coming soon|Project visual coming soon/); });
+test("marketing project points to Kyivski Zori", () => { assert.match(read("src/data/config.ts"), /https:\/\/kz\.kiev\.ua\//); });
+test("blog route has a zero-post empty state without fake posts", () => { const blog = read("src/app/blog/page.tsx"); assert.match(blog, /BLOG_POSTS\.length === 0/); assert.match(blog, /Posts coming soon/); });
+test("blog detail route resolves posts from BLOG_POSTS", () => { const detail = read("src/app/blog/[slug]/page.tsx"); assert.match(detail, /generateStaticParams/); assert.match(detail, /BLOG_POSTS\.find/); assert.match(detail, /notFound\(\)/); });
