@@ -40,6 +40,7 @@ export type ExperienceItem = {
 };
 
 export const EXPERIENCE: ExperienceItem[] = [
+  { period: "Sep 2026 to Present", role: "Data Scientist", company: "CIRAT", companyUrl: null, description: "Working as a Data Scientist at CIRAT." },
   { period: "Jun 2026 to Sep 2026", role: "AI Solutions Development Intern", company: "MHP", companyUrl: "https://mhp.com.ua/en/home", description: "Developed AI-enabled automation and data-processing solutions that streamlined internal workflows, reduced administrative processing time by approximately 70%, cut manual processing work by about 50%, and reduced staffing requirements by the equivalent of 3 employees." },
   { period: "Jun 2025 to Aug 2025", role: "Marketing Analyst Intern", company: "Kyivski Zori", companyUrl: "https://kz.kiev.ua/", description: "Applied marketing analytics, SEO, automation, and competitive research to support growth. This contributed to a 144% increase in site sessions, 100% growth in unique sessions, and a 30% increase in audience reach and inbound inquiries." },
 ];
